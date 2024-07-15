@@ -311,7 +311,7 @@ export const HomeSec4 = {
   span: undefined,
   desc: undefined,
   moreDesc: [
-    "Diverse Products: Wide range of auto parts.",
+    "Diverse Products: Wide range of high-demand products.",
     "Easy to Use: Simple, intuitive platform.", 
     "Low Prices: Competitive product pricing.",
     "24/7 Support: Round-the-clock assistance.",

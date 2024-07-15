@@ -51,7 +51,7 @@ const HowItWorksSection: React.FC = () => {
               <div className="mb-5 flex max-w-[400px] flex-col items-center justify-center rounded-xl border border-solid border-black bg-white px-8 py-5">
                 <p className="text-xl font-bold">2</p>
               </div>
-              <p className="mb-2 text-xl font-semibold">List And Resell Effortlessly</p>
+              <p className="mb-2 text-xl font-semibold">Buy And Resell Effortlessly</p>
               <p className="text-sm text-[#636262]">
               Order products directly from your dashboard with just a few clicks and seamlessly list them for resale.
               </p>
