@@ -27,6 +27,7 @@ import RejectedWithdrawals from './pages/Admin/RejectedWithdrawals';
 import Settings from './pages/Admin/Settings';
 import Kyc from './pages/Admin/Kyc';
 import About from './pages/About';
+import RecentProducts from './pages/RecentProducts';
 
 function App() {
   const { fetching, user } = contextData();
@@ -42,6 +43,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/products" element={<RecentProducts />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route path="/password-reset/:page" element={<PasswordReset />} />
 

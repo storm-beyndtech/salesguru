@@ -27,7 +27,7 @@ export default function Hero3({ data, isProduct }: IHeroProps) {
           <div className="mt-5 max-w-2xl text-center mx-auto">
             <h1 className="block font-bold text-4xl md:text-5xl lg:text-6xl text-gray-200">
               {data.title} {" "}
-              {isProduct && <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">CFDs</span>}
+              {isProduct && <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">Products</span>}
             </h1>
           </div>
 

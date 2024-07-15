@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { HiMinusSmall, HiOutlinePlusSmall } from 'react-icons/hi2';
 import { contextData } from "@/context/AuthContext";
 import s from '../pages/login/Login.module.css'
+import { useNavigate } from 'react-router-dom';
 
 type ProductProps = {
   name: string;
@@ -14,6 +15,7 @@ type ProductProps = {
 };
 
 export default function Products({ products }: { products: ProductProps[] }) {
+  const navigate = useNavigate()
   const url = import.meta.env.VITE_REACT_APP_SERVER_URL;
   const [success, setSuccess] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -58,6 +60,9 @@ export default function Products({ products }: { products: ProductProps[] }) {
   const purchaseProduct = async (product: ProductProps) => {
     setCurrentDesc(product.desc);
     setError(null); setSuccess(null); setLoading(false);
+
+    if(!user) return navigate("/login");
+
     if (user.balance < product.buyPrice) return setError('Insufficient balance');
 
     try {
@@ -169,7 +174,7 @@ export default function Products({ products }: { products: ProductProps[] }) {
                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-4"
                 onClick={() => purchaseProduct(product)}
               >
-                {(loading && currentDesc === product.desc) ? 'Submitting...' : 'Purchase Product'}
+                {(loading && currentDesc === product.desc) ? 'Submitting...' : 'Buy And Resell'}
               </button>
               {(error && currentDesc === product.desc) && <p className={s.formError}>{error}</p>}
               {(success && currentDesc === product.desc) && <p className={s.formSuccess}>{success}</p>}

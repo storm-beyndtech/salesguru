@@ -186,63 +186,64 @@ export const testimonies = [
     title: 'Product Manager | Capsule',
     name: 'Josh Tyson',
     imgUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80',
-    message: "Salesgurucommunity has made navigating the complex world of finance a breeze. Their extensive range of services reflects their expertise. Salesgurucommunity's friendly demeanor and organized approach have made managing my investments effortless. For all things related to copy trading and financial planning, they're the ones I trust.",
+    message: "The product arbitrage services have revolutionized how I approach buying and selling. The automated system is seamless, allowing me to profit from reselling without the hassle. This platform's efficiency and ease of use have been game-changers for my business.",
   },
   {
     title: 'Senior Director of Operations | Fitbit',
     name: 'Luisa',
     imgUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80',
-    message: "Salesgurucommunity epitomizes excellence in copy trading services. Their unwavering dedication to ensuring customer satisfaction sets them apart. With a secure approach, authentic insights, and swift responsiveness, every interaction is seamless. If you're looking for a copy trading platform that delivers results, I wholeheartedly recommend Salesgurucommunity!",
+    message: "This arbitrage company is a standout in the market. Their automated buy-and-resell system has streamlined my operations and boosted my profits significantly. The user-friendly platform and excellent customer support make it a top choice for anyone looking to excel in product arbitrage.",
   },
   {
     title: 'Financial Analyst | Nova',
     name: 'Alisa Williams',
     imgUrl: 'https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80',
-    message: "I've had the privilege of working with Salesgurucommunity for some time now, and their professionalism and knowledge continue to impress me. They provide thoughtful advice tailored to my financial goals and risk tolerance. Salesgurucommunity's commitment to their clients' success is truly remarkable.",
+    message: "The arbitrage services provided have exceeded my expectations. The platform's ability to automatically handle purchases and resales has saved me time and effort while ensuring consistent profits. It's a must-have tool for anyone in the product reselling business.",
   },
   {
     title: 'Tech Entrepreneur | Quantum',
     name: 'Michael',
     imgUrl: 'https://images.pexels.com/photos/3932542/pexels-photo-3932542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    message: "Salesgurucommunity's financial expertise has been a game-changer for me. Their insights into market trends and their ability to explain complex concepts in simple terms have empowered me to make better financial decisions. Their services have exceeded my expectations in every way.",
+    message: "The automation in buying and reselling products is simply remarkable. This arbitrage platform has allowed me to capitalize on market opportunities without getting bogged down by manual processes. It's efficient, reliable, and incredibly profitable.",
   },
   {
     title: 'Investment Strategist | Luna',
     name: 'Sarah Thompson',
     imgUrl: 'https://source.unsplash.com/320x320/?woman',
-    message: "Salesgurucommunity's commitment to their clients is truly commendable. Their dedication to achieving financial goals is evident in every interaction. Their insights have helped me navigate volatile markets with confidence, and their friendly approach makes discussing finances a breeze.",
+    message: "Utilizing this arbitrage platform has transformed my investment strategy. The automated buy-and-resell feature ensures that I never miss a lucrative opportunity. It's a reliable and user-friendly solution for anyone looking to maximize their profits through product arbitrage.",
   },
   {
     title: 'Wealth Manager | Quantum',
     name: 'Anderson',
     imgUrl: 'https://plus.unsplash.com/premium_photo-1682000321215-a061fd738095?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODV8fHdoaXRlJTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D',
-    message: "Working with Salesgurucommunity has been enlightening. Their advice extends beyond mere financial matters; they're a holistic wealth advisor. Their personalized approach and genuine care for their clients' financial well-being are what set them apart. I'm grateful for their guidance.",
+    message: "The automated arbitrage services offered here are exceptional. They handle everything from purchasing to reselling, ensuring maximum profitability with minimal effort. This platform's effectiveness has greatly enhanced my wealth management strategies.",
   },
   {
     title: 'Entrepreneur | Happy customer',
     name: 'Clark',
     imgUrl: 'https://images.unsplash.com/photo-1554260570-9140fd3b7614?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHdoaXRlJTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D',
-    message: "Salesgurucommunity's expertise stands out in a crowded financial landscape. Their knowledge of investment opportunities and risk management is unparalleled. They've not only helped me make informed decisions but also educated me along the way. I highly recommend their services.",
+    message: "This arbitrage platform stands out for its efficiency and profitability. The automated system for buying and reselling products has simplified my operations and increased my earnings. It's an invaluable tool for anyone in the reselling business.",
   },
   {
     title: 'Crypto Enthusiast | Cosmos',
     name: 'Miller',
     imgUrl: 'https://images.unsplash.com/photo-1514851947871-97fd1e04b2e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHdoaXRlJTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D',
-    message: "Salesgurucommunity is a financial wizard. Their ability to foresee market trends and recommend timely actions is remarkable. I've achieved significant growth in my investments under their guidance. They're not just financial advisors; they're strategic partners in wealth-building.",
+    message: "The product arbitrage services here are phenomenal. The automated system has allowed me to leverage market fluctuations to my advantage, resulting in significant profits. It's a powerful tool for any investor looking to capitalize on reselling opportunities.",
   },
   {
     title: 'Retirement Planner | Nebula',
     name: 'Yousaf',
     imgUrl: 'https://images.unsplash.com/photo-1610611803787-7cd04238196f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHdoaXRlJTIwbWFsZXxlbnwwfHwwfHx8MA%3D%3D',
-    message: "I've been a client of Salesgurucommunity for years, and their dedication to my financial success has never wavered. Their well-rounded expertise covers everything from retirement planning to tax-efficient investing. They're an invaluable asset in securing my financial future.",
+    message: "I've seen incredible returns thanks to this arbitrage platform. The automated buy-and-resell feature is a game-changer, making it easy to stay ahead of the market and maximize profits. It's an essential tool for anyone serious about product reselling.",
   },
   {
     title: 'Socially Responsible Investor | Quantum',
     name: 'Nathan',
     imgUrl: 'https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2hpdGUlMjBtYWxlfGVufDB8fDB8fHww',
-    message: "Salesgurucommunity's commitment to ethical financial practices is inspiring. Their recommendations are always aligned with my values, and their transparency in explaining financial strategies is refreshing. With their guidance, I've been able to achieve my financial goals while staying socially responsible.",
+    message: "The commitment to efficiency and profitability in this arbitrage platform is impressive. The automated processes for buying and reselling products have helped me achieve my financial goals effortlessly. It's a must-have for any investor looking to make the most out of arbitrage opportunities.",
   },
 ];
+
 
 
 export const aboutSteps = [
@@ -348,7 +349,13 @@ export const companySec1 = {
 //Hero Details for Company
 export const whyHero = {
   title: "About Salesguru",
-  subtitle: "HERE IS ALL YOU NEED TO KNOW ABOUT SALES GURU PRODUCT ARBITRAGE BUSINESS MODEL ",
+  subtitle: "Here's All You Need To Know About Salesguru Product Arbitrage Business Model.",
+}
+
+//Hero Details for Company
+export const productHero = {
+  title: "Recent",
+  subtitle: "Register, Buy And Resell Instantly",
 }
 
 export const contactHero = {

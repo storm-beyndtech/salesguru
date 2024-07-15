@@ -61,7 +61,7 @@ export default function Navbar() {
     >
       <nav className="max-ctn flex items-center justify-between p-5 py-6 gap-20">
         <Link to="/" className="flex items-center gap-1">
-          <img className="h-10 w-auto" src={logo} alt="logo" />
+          <img className="h-8 w-auto" src={logo} alt="logo" />
         </Link>
 
         {/* Mobile Menu Button */}
