@@ -21,6 +21,7 @@ const Features: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
   const features = [
     {
       title: (

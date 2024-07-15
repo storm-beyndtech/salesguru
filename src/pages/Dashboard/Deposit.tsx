@@ -6,6 +6,7 @@ import { RiFlutterFill } from 'react-icons/ri';
 import { useState } from 'react';
 import { TbInfoSquareRoundedFilled } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import FlutterLogo from '@/components/FlutterLogo';
 
 export default function Deposit() {
   const [showNotAvailable, setShowNotAvailable] = useState(false);
@@ -93,7 +94,7 @@ export default function Deposit() {
           to="/dashboard/deposit/cardPayment"
           className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
         >
-          <RiFlutterFill className="text-3xl text-yellow-500" />
+          <FlutterLogo />
           <span className="flex-1 ms-3">Pay with flutter</span>
         </Link>
       </ul>

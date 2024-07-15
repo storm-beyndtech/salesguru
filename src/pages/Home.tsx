@@ -13,6 +13,7 @@ import DarkSection from "@/components/DarkSection";
 import Process from "@/components/Process";
 import Review from "@/components/Review";
 import Map from "@/components/Map";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <LightSection secData={HomeSec5} />
       <Features />
       <Review />
+      <WhyChooseUs />
       <DarkSection />
       <LightSectionV2 secData={HomeSec1}/>
       <Testimonials data={testimonies} />
