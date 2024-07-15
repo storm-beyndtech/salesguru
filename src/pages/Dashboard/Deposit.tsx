@@ -2,7 +2,6 @@ import { FaStripe } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { BsBank, BsWechat } from 'react-icons/bs';
 import { FaPaypal } from 'react-icons/fa';
-import { RiFlutterFill } from 'react-icons/ri';
 import { useState } from 'react';
 import { TbInfoSquareRoundedFilled } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
