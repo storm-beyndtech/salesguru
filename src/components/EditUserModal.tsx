@@ -15,7 +15,6 @@ export default function EditUserModal({userData, handleUserData}:any) {
   const [zipCode, setZipCode] = useState('');
   const [deposit, setDeposit] = useState(0);
   const [interest, setInterest] = useState(0);
-  const [trade, setTrade] = useState(0);
   const [bonus, setBonus] = useState(0);
   const [error, setError] = useState<string|null>(null);
   const [loading, setLoading] = useState(false)
@@ -28,7 +27,7 @@ export default function EditUserModal({userData, handleUserData}:any) {
     setFullName(userData.fullName); setEmail(userData.email); setSelectedCountry(userData.country);
     setPhoneNumber(userData.phone); setAddress(userData.address); setCity(userData.city); 
     setState(userData.state); setZipCode(userData.zipCode);  setDeposit(userData.deposit); 
-    setInterest(userData.interest); setTrade(userData.trade); setBonus(userData.bonus);
+    setInterest(userData.interest); setBonus(userData.bonus);
   }, [])
 
 
@@ -51,7 +50,7 @@ export default function EditUserModal({userData, handleUserData}:any) {
       country: selectedCountry,
       phone: phoneNumber,
       address, state, city, zipCode,
-      deposit, interest, trade, bonus
+      deposit, interest, bonus
     }
 
 
@@ -148,22 +147,17 @@ export default function EditUserModal({userData, handleUserData}:any) {
 
                         <div className="col-span-3 sm:col-span-2">
                             <label htmlFor="deposit" className="editUserLabel">Deposit</label>
-                            <input value={deposit} onChange={(e) => setDeposit(Number(e.target.value))} type="number" id="deposit" className="editUserInput" placeholder={userData.deposit} required min={0}/>
+                            <input value={deposit} onChange={(e) => setDeposit(Number(e.target.value))} type="number" step="any" id="deposit" className="editUserInput" placeholder={userData.deposit} required min={0}/>
                         </div>
 
                         <div className="col-span-3 sm:col-span-2">
                             <label htmlFor="interest" className="editUserLabel">Interest</label>
-                            <input value={interest} onChange={(e) => setInterest(Number(e.target.value))} type="number" id="interest" className="editUserInput" placeholder={userData.interest} required min={0}/>
-                        </div>
-
-                        <div className="col-span-3 sm:col-span-2">
-                            <label htmlFor="trade" className="editUserLabel">Trade</label>
-                            <input value={trade} onChange={(e) => setTrade(Number(e.target.value))} type="number" id="trade" className="editUserInput" placeholder={userData.trade} required min={0}/>
+                            <input value={interest} onChange={(e) => setInterest(Number(e.target.value))} type="number" step="any" id="interest" className="editUserInput" placeholder={userData.interest} required min={0}/>
                         </div>
 
                         <div className="col-span-3 sm:col-span-2">
                             <label htmlFor="bonus" className="editUserLabel">Bonus</label>
-                            <input value={bonus} onChange={(e) => setBonus(Number(e.target.value))} type="number" id="bonus" className="editUserInput" placeholder={userData.bonus} required min={0}/>
+                            <input value={bonus} onChange={(e) => setBonus(Number(e.target.value))} type="number" step="any" id="bonus" className="editUserInput" placeholder={userData.bonus} required min={0}/>
                         </div>
 
                     </div>

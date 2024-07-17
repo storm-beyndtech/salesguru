@@ -1,5 +1,5 @@
+import BankTransfer from "@/pages/Dashboard/BankTransfer";
 import Bonus from "@/pages/Dashboard/Bonus";
-import CardPayment from "@/pages/Dashboard/CardPayment";
 import Deposit from "@/pages/Dashboard/Deposit";
 import KYC from "@/pages/Dashboard/KYC";
 import MFA from "@/pages/Dashboard/MFA";
@@ -17,9 +17,9 @@ const coreRoutes = [
     component: Purchased,
   },
   {
-    path: '/dashboard/deposit/cardPayment',
-    title: 'Card Payment',
-    component: CardPayment,
+    path: '/dashboard/deposit/bankTransfer',
+    title: 'Bank Transfer',
+    component: BankTransfer,
   },
   {
     path: '/dashboard/deposit',

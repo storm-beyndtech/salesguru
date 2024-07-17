@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-image: linear-gradient(250deg, #273342 50%, #1f2937 50%);
+  background-image: linear-gradient(250deg, #006fd7 50%, #005BAF 50%);
 }
 
 .left, .right{
@@ -35,7 +35,7 @@
   font-size: 3.5rem;
   font-weight: 400;
   font-family: 'Krub', sans-serif;
-  color: #f0fff8;
+  color: #ffffff;
   letter-spacing: -1px;
   text-shadow: 2px 2px 4px rgba(0, 255, 115, 0.1);
 }

@@ -1,6 +1,6 @@
 import DepositForm from "@/components/DepositForm";
 
-export default function CardPayment() {
+export default function BankTransfer() {
   return (
     <DepositForm />
   )

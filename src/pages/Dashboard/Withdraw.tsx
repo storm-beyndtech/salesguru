@@ -6,19 +6,21 @@ import PageLoader from '@/components/PageLoader';
 
 export default function Withdraw() {
   const [rate, setRate] = useState(1650);
+  const [amount, setAmount] = useState(0);
   const [amountInNaira, setAmountInNaira] = useState(1650);
   const [fullName, setFullName] = useState('');
   const [accountNumber, setAccountNumber] = useState('');
   const [bankName, setBankName] = useState('');
   const [fetching, setFetching] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const url = import.meta.env.VITE_REACT_APP_SERVER_URL;
   const { user } = contextData();
   const form = useRef<HTMLFormElement>(null);
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAmount(Number(e.target.value));
     setAmountInNaira(Number(e.target.value) * rate);
   };
 
@@ -50,7 +52,7 @@ export default function Withdraw() {
     setError(null);
     setSuccess(null);
 
-    if (amountInNaira < 50) return setError('Minimum amount is $50');
+    if (amount < 50) return setError('Minimum amount is $50');
     if (fullName.length < 5)
       return setError('Full name must be at least 5 characters');
     if (accountNumber.length < 5)
@@ -64,7 +66,8 @@ export default function Withdraw() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           id: user._id,
-          amount: amountInNaira / rate,
+          amount,
+          amountInNaira,
           fullName,
           bankName,
           accountNumber,
@@ -108,7 +111,7 @@ export default function Withdraw() {
               <input
                 type="text"
                 id="amount"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                className="dbFormInput"
                 placeholder="50"
                 required
                 onChange={handleAmountChange}
@@ -127,7 +130,7 @@ export default function Withdraw() {
               <input
                 type="text"
                 id="amountInNaira"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                className="dbFormInput"
                 value={amountInNaira}
                 readOnly
               />
@@ -143,7 +146,7 @@ export default function Withdraw() {
               <input
                 type="text"
                 id="fullName"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                className="dbFormInput"
                 placeholder="Bonnie Green"
                 required
                 value={fullName}
@@ -161,7 +164,7 @@ export default function Withdraw() {
               <input
                 type="text"
                 id="accountNumber"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                className="dbFormInput"
                 placeholder="0061380431"
                 required
                 value={accountNumber}
@@ -179,7 +182,7 @@ export default function Withdraw() {
               <input
                 type="text"
                 id="bankName"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                className="dbFormInput"
                 placeholder="Moniepoint"
                 required
                 value={bankName}

@@ -16,7 +16,6 @@ import DefaultLayout from './components/Layouts/DefaultLayout';
 import Admin from './pages/Admin/Admin';
 import AdminLayout from './components/Layouts/AdminLayout';
 import ActiveUsers from './pages/Admin/ActiveUsers';
-import ManageTrades from './pages/Admin/ManageTrades';
 import BannedUsers from './pages/Admin/BannedUsers';
 import ApprovedDeposits from './pages/Admin/ApprovedDeposits';
 import PendingDeposits from './pages/Admin/PendingDeposits';
@@ -28,6 +27,7 @@ import Settings from './pages/Admin/Settings';
 import Kyc from './pages/Admin/Kyc';
 import About from './pages/About';
 import RecentProducts from './pages/RecentProducts';
+import ManageProducts from './pages/Admin/ManageProducts';
 
 function App() {
   const { fetching, user } = contextData();
@@ -56,7 +56,7 @@ function App() {
                 <Route index element={<Admin />} />
                 <Route path="/admin/home" element={<Admin />} />
                 <Route path="/admin/active-users" element={<ActiveUsers />} />
-                <Route path="/admin/trades" element={<ManageTrades />} />
+                <Route path="/admin/products" element={<ManageProducts />} />
                 <Route path="/admin/banned-users" element={<BannedUsers />} />
                 <Route path="/admin/approved-deposits" element={<ApprovedDeposits />} />
                 <Route path="/admin/pending-deposits" element={<PendingDeposits />} />

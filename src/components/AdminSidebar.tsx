@@ -60,7 +60,7 @@ const AdminSidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/">
-          <img src={logo} alt="Logo" />
+          <img src={logo} className='h-9 w-auto' alt="Logo" />
         </NavLink>
 
         <button ref={trigger} onClick={() => setSidebarOpen(!sidebarOpen)} aria-controls="sidebar" aria-expanded={sidebarOpen} className="block lg:hidden">
@@ -94,15 +94,15 @@ const AdminSidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                 <li>
                   <NavLink
-                    to="/admin/trades"
+                    to="/admin/products"
                     className={`text-sm group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4${
                       (pathname === '/' ||
-                        pathname.includes('admin/trades')) &&
+                        pathname.includes('admin/products')) &&
                       'bg-graydark dark:bg-meta-4'
                     }`}
                   >
                     <PiPresentationChart className='text-xl'/>
-                    Manage Trades
+                    Manage Products
                   </NavLink>
                 </li>
 

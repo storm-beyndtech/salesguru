@@ -5,7 +5,6 @@ import { FaPaypal } from 'react-icons/fa';
 import { useState } from 'react';
 import { TbInfoSquareRoundedFilled } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
-import FlutterLogo from '@/components/FlutterLogo';
 
 export default function Deposit() {
   const [showNotAvailable, setShowNotAvailable] = useState(false);
@@ -26,10 +25,12 @@ export default function Deposit() {
         Connect with one of our available payment providers.
       </p>
 
-      {showNotAvailable && <div className="flex items-center p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-100 dark:bg-gray-800 dark:text-yellow-400 dark:border-yellow-400">
-        <TbInfoSquareRoundedFilled className="flex-shrink-0 inline w-4 h-4 me-3" />
-        <p>Payment method not available</p>
-      </div>}
+      {showNotAvailable && (
+        <div className="flex items-center p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-100 dark:bg-gray-800 dark:text-yellow-400 dark:border-yellow-400">
+          <TbInfoSquareRoundedFilled className="flex-shrink-0 inline w-4 h-4 me-3" />
+          <p>Payment method not available</p>
+        </div>
+      )}
       <ul className="my-4 space-y-3 font-palanquin">
         <li>
           <a
@@ -70,17 +71,6 @@ export default function Deposit() {
             onClick={notAvailable}
             className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
           >
-            <BsBank className="text-3xl text-gray-400" />
-            <span className="flex-1 ms-3 whitespace-nowrap">Bank Transfer</span>
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="#"
-            onClick={notAvailable}
-            className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
-          >
             <BsWechat className="text-3xl text-lime-400" />
             <span className="flex-1 ms-3">WeChat Pay</span>
           </a>
@@ -90,11 +80,11 @@ export default function Deposit() {
           Exclusive For Users In Africa
         </p>
         <Link
-          to="/dashboard/deposit/cardPayment"
+          to="/dashboard/deposit/bankTransfer"
           className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
         >
-          <FlutterLogo />
-          <span className="flex-1 ms-3">Pay with flutter</span>
+          <BsBank className="text-3xl text-gray-400" />
+          <span className="flex-1 ms-3 whitespace-nowrap">Direct Bank Transfer</span>
         </Link>
       </ul>
     </div>
