@@ -123,9 +123,10 @@ interface WalletData {
   convertedAmount?: number;
 }
 
-interface TradeData {
-  package?: string;
-  interest?: string;
+interface BankData {
+  accountName: string;
+  accountNumber: string;
+  bankName: string;
 }
 
 interface ITransaction {
@@ -136,6 +137,6 @@ interface ITransaction {
   amount: number;
   date: string; 
   walletData: WalletData;
-  tradeData: TradeData;
+  bankData: BankData;
 }
 

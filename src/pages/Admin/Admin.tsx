@@ -2,7 +2,6 @@ import AdminDepositCards from "@/components/AdminDepositCards";
 import AdminTradeCards from "@/components/AdminTradesCard";
 import AdminUserCards from "@/components/AdminUserCards";
 import AdminWithdrawalCards from "@/components/AdminWithdrawalCards";
-import BigChart from "@/components/BigChart";
 import ChartFour from "@/components/ChartFour";
 import ChartOne from "@/components/ChartOne";
 import ChartThree from "@/components/ChartThree";
