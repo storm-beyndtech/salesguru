@@ -48,7 +48,7 @@ export default function ManageWithdrawalModal({toggleModal, withdrawal}: {toggle
         <form className="space-y-6">
           <div className="flex items-center justify-between mb-10 pb-4 border-b rounded-t dark:border-gray-600">
             <h3 className="text-base font-medium text-gray-900 dark:text-white">
-              Withdrawal Via {withdrawal.walletData.coinName}
+              Withdrawal Via Bank
             </h3>
             <button onClick={() => toggleModal(false)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
                 <GrClose />
@@ -77,15 +77,6 @@ export default function ManageWithdrawalModal({toggleModal, withdrawal}: {toggle
 
           <div className="flex justify-between">
             <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-               Method
-            </p>
-            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-              {withdrawal.walletData.coinName}
-            </p>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                Amount
             </p>
             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -95,28 +86,28 @@ export default function ManageWithdrawalModal({toggleModal, withdrawal}: {toggle
 
           <div className="flex justify-between">
             <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-               In {withdrawal.walletData.coinName}
+               Account Name
             </p>
             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-              {withdrawal.walletData.convertedAmount}
+              {withdrawal.bankData.accountName}
+            </p>
+          </div>
+
+          <div className="flex justify-between">
+            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+               Account Number
+            </p>
+            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+              {withdrawal.bankData.accountNumber}
             </p>
          </div>
 
           <div className="flex justify-between">
             <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-               Network
+               Bank Name
             </p>
             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-              {withdrawal.walletData.network}
-            </p>
-         </div>
-
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-               Address
-            </p>
-            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-              {withdrawal.walletData.address}
+              {withdrawal.bankData.bankName}
             </p>
          </div>
 
@@ -159,9 +150,10 @@ interface WalletData {
   convertedAmount?: number;
 }
 
-interface TradeData {
-  package?: string;
-  interest?: string;
+interface BankData {
+  accountName: string;
+  accountNumber: string;
+  bankName: string;
 }
 
 interface ITransaction {
@@ -172,5 +164,5 @@ interface ITransaction {
   amount: number;
   date: string; 
   walletData: WalletData;
-  tradeData: TradeData;
+  bankData: BankData;
 }

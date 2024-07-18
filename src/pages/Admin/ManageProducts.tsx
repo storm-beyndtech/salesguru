@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import s from '../login/Login.module.css';
+import { TfiSearch } from 'react-icons/tfi';
 
 export default function ManageProducts() {
   const [transactions, setTransactions] = useState<ITransaction[] | null>(null);
+  const [filteredProducts, setFilteredProducts] = useState<
+    ITransaction[] | null
+  >(null);
   const [btnLoadProcess, setBtnLoadProcess] = useState({
     loading: false,
     id: '',
@@ -26,8 +30,16 @@ export default function ManageProducts() {
       const res = await fetch(`${url}/products/`);
       const data = await res.json();
 
-      if (res.ok) setTransactions(data);
-      else throw new Error(data.message);
+      if (res.ok) {
+        const products = data.map((d: ITransaction) => {
+          return {
+            ...d, date: new Date(d.date).toLocaleDateString()
+          }
+        })
+        setTransactions(products)
+      } else {
+        throw new Error(data.message);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +47,11 @@ export default function ManageProducts() {
 
   useEffect(() => {
     fetchProducts();
-  }, [success]);
+  }, [success !== null]);
+
+  useEffect(() => {
+    if(transactions) setFilteredProducts(transactions);
+  }, [transactions?.length]);
 
   const getColumnWidth = (str: string, defaultWidth: number = 100) => {
     return str.length > 15 ? 200 : defaultWidth;
@@ -43,9 +59,10 @@ export default function ManageProducts() {
 
   const resolveProduct = async (e: ITransaction) => {
     setError(null);
+    setSuccess(null);
 
     try {
-      setBtnLoadProcess({loading: true, success: false, id: e._id});
+      setBtnLoadProcess({ loading: true, success: false, id: e._id });
       const res = await fetch(`${url}/products/${e._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -54,21 +71,51 @@ export default function ManageProducts() {
       const data = await res.json();
 
       if (res.ok) {
-        setSuccess(data.message)
-        setBtnLoadProcess({loading: false, success: true, id: e._id});
+        setSuccess(data.message);
+        setBtnLoadProcess({ loading: false, success: true, id: e._id });
       } else throw new Error(data.message);
     } catch (error: any) {
       setError(error.message);
       console.log(error);
     } finally {
       setTimeout(() => {
-        setBtnLoadProcess({loading: false, success: false, id: e._id});
-      }, 2000);
+        setBtnLoadProcess({ loading: false, success: false, id: e._id });
+      }, 3000);
+    }
+  };
+
+  const handleSearch = (search: string) => {
+    if (transactions) {
+      let filtered = transactions.filter(
+        (transaction: ITransaction) =>
+          transaction.user.email.toLowerCase().includes(search) ||
+          transaction.productData.name.toLowerCase().includes(search) ||
+          transaction.date.toLowerCase().includes(search),
+      );
+      setFilteredProducts(filtered);
     }
   };
 
   return transactions ? (
     <div className="relative overflow-x-auto rounded-[6px]">
+
+      <div className="py-3 bg-white dark:bg-transparent mb-5 flex justify-center">
+        <label htmlFor="table-search" className="sr-only">
+          Search
+        </label>
+        <div className="relative">
+          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <TfiSearch className="w53 h-3 text-gray-500 dark:text-gray-400" />
+          </div>
+          <input
+            onChange={(e) => handleSearch(e.target.value)}
+            type="text"
+            className="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search for users"
+          />
+        </div>
+      </div>
+
       {error && <p className={s.formError}>{error}</p>}
       {success && <p className={s.formSuccess}>{success}</p>}
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700">
@@ -87,7 +134,7 @@ export default function ManageProducts() {
         </thead>
 
         <tbody>
-          {transactions.map((transaction: ITransaction, i: number) => (
+          {filteredProducts?.map((transaction: ITransaction, i: number) => (
             <tr className="bg-white dark:bg-gray-800" key={i}>
               <th
                 scope="row"
@@ -111,7 +158,7 @@ export default function ManageProducts() {
                 ${transaction.productData.sellPrice.toFixed(2)}
               </td>
               <td className="px-6 py-4">
-                {new Date(transaction.date).toLocaleDateString()}
+                {transaction.date}
               </td>
               <td className="px-6 py-4">
                 {transaction.status === 'pending' && (
@@ -147,9 +194,9 @@ export default function ManageProducts() {
 }
 
 interface User {
-  id?: string;
-  email?: string;
-  name?: string;
+  id: string;
+  email: string;
+  name: string;
 }
 
 interface ProductData {

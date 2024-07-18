@@ -68,7 +68,7 @@ export default function Withdraw() {
           id: user._id,
           amount,
           amountInNaira,
-          fullName,
+          accountName: fullName,
           bankName,
           accountNumber,
         }),

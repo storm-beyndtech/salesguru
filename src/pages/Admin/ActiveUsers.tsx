@@ -104,8 +104,8 @@ export default function ActiveUsers() {
 
                 <td>
                   <div className="min-w-[150px] ps-4 text-xs font-semibold">
-                    <div>deposit: ${user.deposit}</div>
-                    <div>Interest: ${user.interest}</div>
+                    <div>deposit: ${user.deposit.toFixed(2)}</div>
+                    <div>Interest: ${user.interest.toFixed(2)}</div>
                   </div>
                 </td>
 

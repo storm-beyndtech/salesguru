@@ -90,15 +90,6 @@ export default function ManageDepositModal({toggleModal, deposit}: {toggleModal:
 
           <div className="flex justify-between">
             <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-               Method
-            </p>
-            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-              {deposit.walletData.coinName}
-            </p>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                Amount
             </p>
             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -108,10 +99,28 @@ export default function ManageDepositModal({toggleModal, deposit}: {toggleModal:
 
           <div className="flex justify-between">
             <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-               In {deposit.walletData.coinName}
+               Account Name
             </p>
             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-              {deposit.walletData.convertedAmount}
+              {deposit.bankData.accountName}
+            </p>
+          </div>
+
+          <div className="flex justify-between">
+            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+               Account Number
+            </p>
+            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+              {deposit.bankData.accountNumber}
+            </p>
+         </div>
+
+          <div className="flex justify-between">
+            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+               Bank Name
+            </p>
+            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+              {deposit.bankData.bankName}
             </p>
          </div>
 
@@ -162,9 +171,10 @@ interface WalletData {
   convertedAmount?: number;
 }
 
-interface TradeData {
-  package?: string;
-  interest?: string;
+interface BankData {
+  accountName: string;
+  accountNumber: string;
+  bankName: string;
 }
 
 interface ITransaction {
@@ -175,5 +185,5 @@ interface ITransaction {
   amount: number;
   date: string; 
   walletData: WalletData;
-  tradeData: TradeData;
+  bankData: BankData;
 }
