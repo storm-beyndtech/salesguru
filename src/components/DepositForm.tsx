@@ -187,7 +187,7 @@ export default function DepositForm() {
         <div className="flex items-center my-8 text-sm text-gray-400">
           <TbInfoSquareRounded className="flex-shrink-0 inline w-6 h-6 me-3" />
           <p>
-            The name used while funding must corresponds with your profile. Only
+            The name used while funding must correspond with your profile. Only
             click on 'Deposit Now' after funding.
           </p>
         </div>
