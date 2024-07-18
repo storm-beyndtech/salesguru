@@ -12,8 +12,8 @@ export default function DepositForm() {
     accountNumber: '',
     bankName: '',
   });
-  const [amountInNaira, setAmountInNaira] = useState(1650);
-  const [amount, setAmount] = useState(0);
+  const [amountInNaira, setAmountInNaira] = useState(0);
+  const [amount, setAmount] = useState(1);
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -37,6 +37,7 @@ export default function DepositForm() {
 
       if (res.ok) {
         setRate(data.rate);
+        setAmountInNaira(data.rate);
         setVirtualAccount(data.virtualAccount);
       } else {
         throw new Error(data.message);

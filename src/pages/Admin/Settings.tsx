@@ -5,6 +5,12 @@ export default function Settings() {
   const [coins, setCoins] = useState([
     { name: '', address: '', network: '', price: 0 },
   ]);
+  const [rate, setRate] = useState(1650);
+  const [virtualAccount, setVirtualAccount] = useState({
+    accountName: '',
+    accountNumber: '',
+    bankName: '',
+  });
   const [utilId, setUtilId] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -17,7 +23,9 @@ export default function Settings() {
       const data = await res.json();
 
       if (res.ok) {
-        setCoins(data.coins || []);
+        setCoins(data.coins);
+        setRate(data.rate);
+        setVirtualAccount(data.virtualAccount);
         setUtilId(data._id);
       } else {
         throw new Error(data.message);
@@ -36,13 +44,14 @@ export default function Settings() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setError(null);
+    setSuccess(false);
 
     try {
       setLoading(true);
       const res = await fetch(`${url}/utils/update/${utilId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ coins }),
+        body: JSON.stringify({ coins, rate, virtualAccount }),
       });
 
       const data = await res.json();
@@ -66,6 +75,13 @@ export default function Settings() {
     setCoins(newCoins);
   };
 
+  const handleVirtualAccountChange = (
+    field: string,
+    value: string,
+  ) => {
+    setVirtualAccount({ ...virtualAccount, [field]: value });
+  };
+
   const addCoin = () => {
     setCoins([...coins, { name: '', address: '', network: '', price: 0 }]);
   };
@@ -86,6 +102,64 @@ export default function Settings() {
         </h3>
       </div>
       <div className="p-6 space-y-6">
+        <div className="grid grid-cols-6 gap-6">
+          <div className="col-span-6">
+            <label htmlFor="rate" className="editUserLabel">Rate</label>
+            <input
+              value={rate}
+              onChange={(e) => setRate(parseFloat(e.target.value))}
+              type="number"
+              id="rate"
+              className="editUserInput"
+              required
+            />
+          </div>
+          <div className="col-span-6 sm:col-span-3">
+            <label htmlFor="accountName" className="editUserLabel">
+              Account Name
+            </label>
+            <input
+              value={virtualAccount.accountName}
+              onChange={(e) =>
+                handleVirtualAccountChange('accountName', e.target.value)
+              }
+              type="text"
+              id="accountName"
+              className="editUserInput"
+              required
+            />
+          </div>
+          <div className="col-span-6 sm:col-span-3">
+            <label htmlFor="accountNumber" className="editUserLabel">
+              Account Number
+            </label>
+            <input
+              value={virtualAccount.accountNumber}
+              onChange={(e) =>
+                handleVirtualAccountChange('accountNumber', e.target.value)
+              }
+              type="text"
+              id="accountNumber"
+              className="editUserInput"
+              required
+            />
+          </div>
+          <div className="col-span-6 sm:col-span-3">
+            <label htmlFor="bankName" className="editUserLabel">
+              Bank Name
+            </label>
+            <input
+              value={virtualAccount.bankName}
+              onChange={(e) =>
+                handleVirtualAccountChange('bankName', e.target.value)
+              }
+              type="text"
+              id="bankName"
+              className="editUserInput"
+              required
+            />
+          </div>
+        </div>
         {coins.map((coin, index) => (
           <div key={index} className="grid grid-cols-6 gap-6">
             <div className="col-span-6 sm:col-span-3">
@@ -170,7 +244,6 @@ export default function Settings() {
           <p className={s.formSuccess}>Utils Updated Successfully...</p>
         )}
       </div>
-
       <div className="flex items-center p-6 space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b dark:border-gray-600">
         <button
           type="button"
@@ -179,7 +252,6 @@ export default function Settings() {
         >
           Add New Coin
         </button>
-        
         <button
           type="submit"
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
