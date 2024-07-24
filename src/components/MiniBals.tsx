@@ -11,7 +11,7 @@ export default function MiniBals() {
           Deposit
         </p>
 
-        <h2 className="text-2xl sm:text-4xl font-medium text-gray-700 dark:text-[#f0fff8]">
+        <h2 className="text-2xl sm:text-4xl font-medium text-gray-700 dark:text-white">
           <span className="font-[Courier] font-normal text-lg">$</span>
           {formatBalance(user?.deposit)}
         </h2>
@@ -22,7 +22,7 @@ export default function MiniBals() {
           Interest
         </p>
 
-        <h2 className="text-2xl sm:text-4xl font-medium text-gray-700 dark:text-[#f0fff8]">
+        <h2 className="text-2xl sm:text-4xl font-medium text-gray-700 dark:text-white">
           <span className="font-[Courier] font-normal text-lg">$</span>
           {formatBalance(user?.interest)}
         </h2>

@@ -55,19 +55,19 @@ export default function Balance({ type, user }: BalanceProps) {
             
             <Link
               to="/dashboard/withdrawal"
-              className="bg-red-500/10 py-1.5 px-3 text-red-600 font-krub font-semibold rounded-full text-xs"
+              className="bg-red-500/5 py-1.5 px-3 text-red-600 font-krub font-semibold rounded-full text-xs"
             >
               Withdraw
             </Link>
 
             {type === 'bonus' ? (
-              <div className="bg-blue-500/10 py-1.5 px-3 backdrop-blur-lg text-blue-600 font-krub font-semibold rounded-full text-xs" onClick={() => handleCopy(user.username)}>
+              <div className="bg-blue-500/5 py-1.5 px-3 backdrop-blur-lg text-blue-600 font-krub font-semibold rounded-full text-xs" onClick={() => handleCopy(user.username)}>
                 Copy Referral Code
               </div>
             ) : (
               <Link
                 to="/dashboard/deposit"
-                className="bg-blue-500/10 py-1.5 px-3 backdrop-blur-lg text-blue-600 font-krub font-semibold rounded-full text-xs"
+                className="bg-blue-500/5 py-1.5 px-3 backdrop-blur-lg text-blue-600 font-krub font-semibold rounded-full text-xs"
               >
                 + Add Money
               </Link>
