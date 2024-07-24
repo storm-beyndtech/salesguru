@@ -19,6 +19,7 @@ export default function ManageProducts() {
     'User Email',
     'Product Name',
     'Quantity',
+    'Duration',
     'Buy Price',
     'Sell Price',
     'Date',
@@ -90,6 +91,7 @@ export default function ManageProducts() {
         (transaction: ITransaction) =>
           transaction.user.email.toLowerCase().includes(search) ||
           transaction.productData.name.toLowerCase().includes(search) ||
+          transaction.productData.duration.toLowerCase().includes(search) ||
           transaction.date.toLowerCase().includes(search),
       );
       setFilteredProducts(filtered);
@@ -151,6 +153,10 @@ export default function ManageProducts() {
               <td className="px-6 py-4 max-sm:text-[10px] min-w-28">
                 {transaction.productData.quantity}
               </td>
+
+              <td className="px-6 py-4 max-sm:text-[10px] min-w-28">
+                {transaction.productData.duration}
+              </td>
               <td className="px-6 py-4">
                 ${transaction.productData.buyPrice.toFixed(2)}
               </td>
@@ -201,6 +207,7 @@ interface User {
 
 interface ProductData {
   name: string;
+  duration: string;
   buyPrice: number;
   sellPrice: number;
   quantity: number;

@@ -1,8 +1,8 @@
-import DisplayActiveTrade from "@/components/DisplayActiveTrade";
-import UsdChart from "@/components/UsdChart"
-import Balance from "@/components/balance/Balance"
-import { contextData } from "@/context/AuthContext"
-import { useEffect, useState } from "react";
+import DisplayActiveTrade from '@/components/DisplayActiveTrade';
+import UsdChart from '@/components/UsdChart';
+import Balance from '@/components/Balance';
+import { contextData } from '@/context/AuthContext';
+import { useEffect, useState } from 'react';
 
 export default function Trades() {
   const [tradeData, setTradeData] = useState<any>([]);
@@ -13,7 +13,7 @@ export default function Trades() {
     try {
       const res = await fetch(`${url}/trades/user/${user._id}`);
       const data = await res.json();
-  
+
       if (res.ok) {
         setTradeData(data);
       } else {
@@ -23,19 +23,17 @@ export default function Trades() {
       console.error(error);
     }
   };
-  
 
   useEffect(() => {
     fetchTrades();
-    console.log(tradeData)
+    console.log(tradeData);
   }, [tradeData.length]);
-
 
   return (
     <>
       <div className="w-full flex gap-5 my-4 max-[900px]:flex-col">
         <div className="flex-none">
-          <Balance type="trade" user={user}/>
+          <Balance type="trade" user={user} />
         </div>
         <div className="flex-auto shadow-1">
           <UsdChart />

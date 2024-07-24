@@ -8,13 +8,14 @@ type ProductProps = {
   name: string;
   imgUrl: string;
   desc: string;
+  duration: string;
   buyPrice: number;
   sellPrice: number;
   quantity: number;
   showMore: boolean;
 };
 
-export default function Products({ products }: { products: ProductProps[] }) {
+export default function Products({ products } : { products: ProductProps[] }) {
   const navigate = useNavigate()
   const url = import.meta.env.VITE_REACT_APP_SERVER_URL;
   const [success, setSuccess] = useState<string | null>(null)
@@ -113,14 +114,20 @@ export default function Products({ products }: { products: ProductProps[] }) {
 
               <div className="mt-4 flex items-center justify-between gap-1">
                 <div>
-                  <p className="text-xl font-medium font-rubik text-gray-900 dark:text-white">
+                  <p className="text-lg font-medium font-rubik text-gray-900 dark:text-white">
                     ${product.buyPrice.toFixed(2)}
                   </p>
                   <p className="text-xs">Buy Price</p>
                 </div>
 
                 <div>
-                  <p className="text-xl font-medium font-rubik text-gray-900 dark:text-white">
+                  <p className="text-xs font-medium font-rubik text-gray-500 dark:text-white/70">
+                    {product.duration}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-lg font-medium font-rubik text-gray-900 dark:text-white">
                     ${product.sellPrice.toFixed(2)}
                   </p>
                   <p className="text-xs">Sell Price</p>
