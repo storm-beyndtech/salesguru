@@ -28,8 +28,8 @@ export default function Balance({ type, user }: BalanceProps) {
   };
 
   return (
-    <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-3xl w-[360px] max-sm:w-full">
-      <div className='bg-white rounded-3xl w-full'>
+    <div className="p-2 bg-gray-900/10 dark:bg-gray-800 rounded-3xl w-[360px] max-sm:w-full">
+      <div className='bg-gray-800 rounded-3xl w-full'>
         <div className="w-full bg-contain p-5 flex flex-col" style={{ backgroundImage: `url(${balBg})` }}>
           <div className='flex justify-between items-center'>
             <p className="text-gray-400 font-semibold font-krub text-sm">
@@ -40,7 +40,7 @@ export default function Balance({ type, user }: BalanceProps) {
           </div>
           
 
-            <h1 className="text-4xl font-krub font-[600] text-black my-4">
+            <h1 className="text-4xl font-krub font-[600] text-white my-4">
               <span className="text-xl text-gray-400 font-[Courier]">$</span>
               {type === 'balance'
                 ? formatBalance(user.balance)

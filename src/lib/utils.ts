@@ -38,155 +38,85 @@ export const formatBalance = (balance: number) => {
 //Products 
 export const products = [
   {
-    name: 'Silicone Digital Watch',
+    name: 'Electric Air Compressor',
     imgUrl: product1,
     showMore: false,
-    duration: '12 hrs',
+    duration: '7 days',
     quantity: 10,
-    buyPrice: 1.02,
-    sellPrice: 1.04,
-    desc: '2Pcs/Set Fashion Couple Friends Sports Digital Watch Square Silicone Digital Watch'
+    buyPrice: 10.25,
+    sellPrice: 20.5,
+    desc: 'Electric Air Compressor Rechargeable High Precision Car Tyre Inflator LCD Display Portable Air Pump for Car Motorcycle Bike Ball'
   },
   {
-    name: 'Razor Wet &amp Dry',
+    name: 'Muscle Stimulator',
     imgUrl: product2,
+    showMore: false,
+    duration: '2 days',
+    quantity: 10,
+    buyPrice: 3.99,
+    sellPrice: 4.22,
+    desc: 'EMS Abdominal Muscle Stimulator Fitness ABS Arm Training Patches Muscle Exercise Instrument USB Charging Home Men'
+  },
+  {
+    name: 'Electric Shavers',
+    imgUrl: product3,
     showMore: false,
     duration: '1 day',
     quantity: 10,
-    buyPrice: 1.43,
-    sellPrice: 1.49,
-    desc: 'Razor Wet &amp Dry Use Rechargeable Battery Rotary Shavers Machine shaving'
+    buyPrice: 0.99,
+    sellPrice: 1.01,
+    desc: 'Electric Shavers for Men Waterproof Electric Trimmer Razor Wet &amp Dry Use Rechargeable Battery Rotary Shavers Machine shaving'
   },
   {
-    name: 'Electric Toothbrush',
-    imgUrl: product3,
-    showMore: false,
-    duration: '10 days',
-    quantity: 10,
-    buyPrice: 4.42,
-    sellPrice: 7.514,
-    desc: '6 in 1 Ultrasonic Dental Cleaner Scaler Dental Tartar Remover Electric Toothbrush Sonic Teeth Plaque Cleaner Tooth Cleaner'
-  },
-  {
-    name: 'Voilet Light Shoe Dryer',
+    name: 'Handheld Milk Frother',
     imgUrl: product4,
     showMore: false,
     duration: '5 days',
     quantity: 10,
-    buyPrice: 1.00,
-    sellPrice: 1.14,
-    desc: '220V/110V Race Car Shape Voilet Light Shoe Dryer Protector Odor Deodorant Dehumidify Device Shoes Drier Machine'
+    buyPrice: 4.40,
+    sellPrice: 5.72,
+    desc: 'Handheld Milk Frother, Battery Operated Electric Foam Maker and Mixer for Drinks ,Drink Mixer for Coffee, Mini Foamer for Cappuc'
   },
   {
-    name: 'Vacuum Mopping Robot Cleaner',
+    name: 'Electric Waffle Maker',
     imgUrl: product5,
-    showMore: false,
-    duration: '7 days',
-    quantity: 10,
-    buyPrice: 71.60,
-    sellPrice: 96.66,
-    desc: 'Vacuum Mopping Robot Cleaner Wet Mopping Floor Scrubbing and Scrubbing Is Only Suitable for Hard Floors'
-  },
-  {
-    name: 'PC Soundbar',
-    imgUrl: product6,
     showMore: false,
     duration: '10 days',
     quantity: 10,
-    buyPrice: 6.69,
-    sellPrice: 11.373,
-    desc: 'PC Soundbar Wired and Wireless Bluetooth Speaker USB Powered Soundbar for TV Pc Laptop Gaming Home'
+    buyPrice: 13.82,
+    sellPrice: 41.76,
+    desc: 'Professional Electric Waffle Maker Cooking Kitchen Appliances Multifunction Breakfast Waffles Machine Non-stick Iron Pan'
   },
   {
-    name: 'Monster Ture Wireless Earbuds',
-    imgUrl: product7,
+    name: 'Hair Trimmer',
+    imgUrl: product6,
     showMore: false,
     duration: '15 days',
     quantity: 10,
-    buyPrice: 12.13,
-    sellPrice: 24.260,
-    desc: 'Monster Ture Wireless Earbuds AI Noise Cancelling Bluetooth 5.4 Headphones IPX5 Waterproof Sports'
+    buyPrice: 23.19,
+    sellPrice: 69.57,
+    desc: 'Hair Trimmer for Men DLC T-Blade LED Display USB Interface Ceramic Blade Professional Hair Clipper Finishing Machine Barbershop'
   },
   {
-    name: 'Electric Toothbrush',
-    imgUrl: product8,
-    showMore: false,
-    duration: '5 days',
-    quantity: 10,
-    buyPrice: 2.26,
-    sellPrice: 2.576,
-    desc: 'U-Type Toothbrush 360 Degrees Intelligent Silicon Head Sonic Electric Toothbrush Automatic USB Charge'
-  },
-  {
-    name: 'Air Purifier with Humidifier',
-    imgUrl: product9,
-    showMore: false,
-    duration: '30 days',
-    quantity: 10,
-    buyPrice: 140.49,
-    sellPrice: 561.96,
-    desc: 'Air Purifier with Humidifier Combo for Home Allergies and Pets Hair, Smokers in Bedroom, H13 True HEPA Filter, 2 in 1.'
-  },
-  {
-    name: 'Portable Humidifier',
-    imgUrl: product10,
-    showMore: false,
-    duration: '5 days',
-    quantity: 10,
-    buyPrice: 1.00,
-    sellPrice: 1.14,
-    desc: 'Mini Portable Water Drop Air Humidifier USB Desktop Indoor Household Mute Air Atomization Humidifier.'
-  },
-  {
-    name: 'Quart Compact Air Fryer',
-    imgUrl: product11,
+    name: 'Portable Folding Treadmills',
+    imgUrl: product7,
     showMore: false,
     duration: '20 days',
     quantity: 10,
-    buyPrice: 20.06,
-    sellPrice: 50.15,
-    desc: 'Mainstays 2.2 Quart Compact Air Fryer, Non-Stick, Dishwasher Safe Basket, 1150W, Black,Height of 10.43 in'
+    buyPrice: 230.87,
+    sellPrice: 1439.22,
+    desc: 'Portable Folding Treadmills for Home, Max 3.0 HP Running Walking Treadmill with 12 Pre Set Programs and Wider Tread Belt,'
   },
   {
-    name: '6-Cup Rice Cooker',
-    imgUrl: product12,
+    name: 'Folding Washing Machine',
+    imgUrl: product8,
     showMore: false,
     duration: '30 days',
     quantity: 10,
-    buyPrice: 17.67,
-    sellPrice: 70.68,
-    desc: 'Aroma 6-Cup Pot Style Rice Cooker'
-  },
-  {
-    name: 'Vacuum Sealer',
-    imgUrl: product13,
-    showMore: false,
-    duration: '25 days',
-    quantity: 10,
-    buyPrice: 7.73,
-    sellPrice: 23.19,
-    desc: 'Vacuum Sealer Machine Food Vacuum Sealer For Food Saver Automatic Air Sealing System For Food Storage Dry With 10pcs Seal Bags'
-  },
-  {
-    name: '30W 7 in 1 Wireless Charger',
-    imgUrl: product14,
-    showMore: false,
-    duration: '15 days',
-    quantity: 10,
-    buyPrice: 4.30,
-    sellPrice: 8.60,
-    desc: '30W 7 in 1 Wireless Charger Stand Pad For iPhone 14 13 12 Pro Max Apple Watch Airpods Pro iWatch 8 7 Fast Charging Dock Station'
-  },
-  {
-    name: 'Sport GPS Smart Watch',
-    imgUrl: product15,
-    showMore: false,
-    duration: '70 days',
-    quantity: 10,
-    buyPrice: 40.99,
-    sellPrice: 409.9,
-    desc: 'For Android IOS Outdoor Sport GPS Smart Watch Men 1.43 466*466 HD AMOLED Screen IP68 Waterproof Bluetooth Call Smartwatch 2024'
-  },
+    buyPrice: 35.63,
+    sellPrice: 320.67,
+    desc: 'Folding Washing Machine Bucket for Clothes Socks Underwear Cleaning Washer Portable Small Travel Washing Machine EU/US PLUG'
+  }
 ];
 
 
