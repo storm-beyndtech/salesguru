@@ -16,13 +16,6 @@ import product5 from "../assets/products/product-5.jpg"
 import product6 from "../assets/products/product-6.jpg"
 import product7 from "../assets/products/product-7.jpg"
 import product8 from "../assets/products/product-8.jpg"
-import product9 from "../assets/products/product-9.jpg"
-import product10 from "../assets/products/product-10.jpg"
-import product11 from "../assets/products/product-11.jpg"
-import product12 from "../assets/products/product-12.jpg"
-import product13 from "../assets/products/product-13.jpg"
-import product14 from "../assets/products/product-14.jpg"
-import product15 from "../assets/products/product-15.jpg"
 
 
 export const formatBalance = (balance: number) => {
